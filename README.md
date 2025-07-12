@@ -73,10 +73,9 @@ Cette version a été pensée pour être **simple, rapide à déployer**, sans b
 ## 🚀 Lancer le projet localement
 
 ```bash
-git clone https://github.com/[TON-UTILISATEUR]/confession-anonyme-pro.git
-cd confession-anonyme-pro
+git clone https://github.com/Tryboy869/Nexus-Confession-Anonyme-Pro
 npm install
-cp .env.example .env.local # puis configure les clés nécessaires
+cp .env.local # puis configure les clés nécessaires
 
 npm run dev
 
