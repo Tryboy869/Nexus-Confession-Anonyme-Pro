@@ -1,43 +1,88 @@
-# Anonymous Feedback App
+# Confession Anonyme Pro – Version Légère 💌
 
-## Introduction
-The Anonymous Feedback App is a robust platform designed to facilitate anonymous communication and feedback exchange. This application enables users to create profiles, share unique links, and receive anonymous feedback and messages. It is built with a scalable, dynamic, and fully responsive architecture, ensuring compatibility across various devices and screen sizes.
+## 📌 Présentation
 
-## Features
-- **Dynamic UI:** Leveraging Next.js and React.js for a seamless and interactive user experience.
-- **Responsive Design:** Tailwind CSS ensures the application is visually appealing on all devices.
-- **Scalable Backend:** Powered by MongoDB, providing robust and efficient data handling.
-- **Secure Authentication:** Implemented with NextAuth.js to ensure secure login and user management.
-- **Efficient API Calls:** Axios is used for efficient data fetching and API integration.
-- **Data Validation:** Zod is utilized for schema validation, ensuring data integrity and consistency.
+**Confession Anonyme Pro** est une plateforme légère permettant d’envoyer des messages anonymes à n’importe qui, même sans que la personne ait un compte. Le message est transmis via un **email personnalisé**, et le destinataire peut y répondre anonymement via le site web.
 
-## Tech Stack
+Cette version a été pensée pour être **simple, rapide à déployer**, sans base de données complexe, avec une logique freemium intégrée dès le départ.
+
+---
+
+## ⚙️ Fonctionnalités actuelles (Version MVP)
+
+- ✉️ **Envoi de messages anonymes par email** (via adresse unique)
+- 💬 **Réception et réponse anonyme** via lien sécurisé (`/respond/[messageId]`)
+- 📦 **Base de données simplifiée** via fichier JSON (pas de Supabase ou MongoDB)
+- 🧠 **Templates de message** pour aider à formuler des textes bienveillants
+- 💳 **Freemium** : 3 messages gratuits par semaine
+- 💰 **Paiement via PayPal** : 5 messages pour 3$ avec code de recharge
+- 🔐 **Aucune authentification requise** pour commencer
+
+---
+
+## 🔮 Vision à long terme
+
+### 🧩 Phase 1 – Version légère (déjà en cours ✅)
+
+> Objectif : fournir une version simple, utilisable dès maintenant, sans friction technique
+
+- Email comme seul canal
+- Base de données fichier (`db.json`)
+- Envoi manuel ou automatique (Resend ou nodemailer)
+- Paiement simple via PayPal + système de recharge via code unique
+- Interface responsive (Next.js + Tailwind)
+
+### 🚀 Phase 2 – Version intermédiaire (Freemium avancé + multi-canal)
+
+> Objectif : ajouter plus de moyens d’envoi et structurer l’expérience utilisateur
+
+- Ajout du canal WhatsApp et SMS (manuels ou via Twilio)
+- Mise en place d’un vrai système de tokens/messagesLeft pour les utilisateurs
+- Possibilité de créer un compte facultatif pour mieux gérer les messages envoyés/reçus
+- Dashboard personnel pour journal intime (privé, non partagé)
+- Système de parrainage intégré
+
+### 🧠 Phase 3 – Plateforme complète avec IA & analytics
+
+> Objectif : transformer la plateforme en assistant anonyme intelligent
+
+- Analyse IA du ton (positif / constructif / toxique) avec HuggingFace
+- Suggestions automatiques de réponse (IA générative)
+- Analytics sur les messages (types, humeur, taux de réponse)
+- Intégration d’un espace communautaire anonyme optionnel
+- API publique pour intégration dans des apps tierces
+
+---
+
+## 🛠️ Stack technique
+
 ### Frontend
-- **Next.js:** A powerful React framework for server-side rendering and static site generation.
-- **React.js:** A popular JavaScript library for building user interfaces.
-- **Tailwind CSS:** A utility-first CSS framework for rapid UI development.
-- **Shadcn:** A library for accessible and customizable UI components.
+- **Next.js** – pour le rendu SSR rapide
+- **React.js** – interface dynamique et modulaire
+- **Tailwind CSS** – design rapide et responsive
+- **TypeScript** – robustesse et sécurité
 
 ### Backend
-- **MongoDB:** A NoSQL database for scalable and high-performance data storage.
-- **NextAuth.js:** A library for authentication with support for OAuth, email/password, and more.
-- **Axios:** A promise-based HTTP client for making API requests.
-- **Zod:** A TypeScript-first schema declaration and validation library.
+- **Node.js (API Routes)** – logique serveur simple avec fichiers JSON
+- **Nodemailer ou Resend** – envoi d’emails anonymes
+- **PayPal SDK REST** – paiement sécurisé avec clé publique/privée
+- **(Optionnel futur)** : Twilio, MongoDB, NextAuth, Zod...
 
-## Usage
-### Creating Your Profile
-1. Sign up on the platform and create your profile.
-2. Share your unique profile link with friends, colleagues, or followers.
+---
 
-### Receiving Feedback
-1. Receive anonymous feedback and messages through your shared link.
-2. Use the feedback to engage, improve, and grow personally or professionally.
+## 🚀 Lancer le projet localement
 
-## Links
-- **Live App:** [Anonymous Feedback App](https://anonymous-feedback-app-devsoni-projects.vercel.app/)
-- **GitHub Repository:** [GitHub Link](https://github.com/dev-soni-07/Anonymous-Feedback-App/)
+```bash
+git clone https://github.com/[TON-UTILISATEUR]/confession-anonyme-pro.git
+cd confession-anonyme-pro
+npm install
+cp .env.example .env.local # puis configure les clés nécessaires
 
-Feel free to send me anonymous feedback and messages through my profile: [Send Feedback to Dev Soni](https://anonymous-feedback-app-devsoni-projects.vercel.app/user/devsoni)
+npm run dev
 
-## Contact
-For any inquiries or feedback, please contact me at devsoni071103@gmail.com or [LinkedIn](https://www.linkedin.com/in/dev-soni-sde/)
+
+🌐 Liens importants
+
+Live App (à venir) :
+
+Email support : confession.anonyme.pro@gmail.com
